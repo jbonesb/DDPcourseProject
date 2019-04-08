@@ -8,7 +8,6 @@ library(data.table)
 shinyServer(function(input, output) {
     mtcars$mpgsp <- ifelse(mtcars$mpg - 20 > 0, mtcars$mpg - 20, 0)
     model1 <- lm(hp ~ mpg, data = mtcars)
-
     model2 <- lm(hp ~ mpgsp + mpg, data = mtcars)
     
     model1pred <- reactive({

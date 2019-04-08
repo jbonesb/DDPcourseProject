@@ -26,7 +26,7 @@ shinyUI(fluidPage(
                     h3("How to use this App"),
                     br(),
 
-                    p("This is the simply prediction app that use linier regression model to predict *mpg* on mtcars dataset."),
+                    p("This is the simply prediction app that use linier regression model to predict Horsepower based on Miles per Gallon from mtcars dataset."),
                     br(),
                     p("- You can use slider to select MPG for prediction."),
                     p("- You can switch on/off model visualisation on plot."),
