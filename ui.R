@@ -14,11 +14,26 @@ shinyUI(fluidPage(
             checkboxInput("showModel2", "Show/Hide Model 2", value = TRUE)
         ),
         mainPanel(
-            plotOutput("plot1", brush = brushOpts(id = "brush1") ),
-            h3("Predicted Horsepower from Model 1:"),
-            textOutput("pred1"),
-            h3("Predicted Horsepower from Model 2:"),
-            textOutput("pred2")
+            tabsetPanel(type = "tabs", 
+                tabPanel("Main", br(), 
+                     plotOutput("plot1", brush = brushOpts(id = "brush1") ),
+                     h3("Predicted Horsepower from Model 1:"),
+                     textOutput("pred1"),
+                     h3("Predicted Horsepower from Model 2:"),
+                     textOutput("pred2")
+                ),
+                tabPanel("Help", br(), 
+                    h3("How to use this App"),
+                    br(),
+
+                    p("This is the simply prediction app that use linier regression model to predict *mpg* on mtcars dataset."),
+                    br(),
+                    p("- You can use slider to select MPG for prediction."),
+                    p("- You can switch on/off model visualisation on plot."),
+                    p("- You can select some points on plot to produce Model 1 prediction on this points."),
+                    br()
+                )
+            )
         )
     )
 ))
